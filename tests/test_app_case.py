@@ -7,7 +7,7 @@
 # Run:
 #   uv run python -m pytest
 
-from datafun import app_case
+from mlstudio import app_case
 
 
 def test_app_case_has_main() -> None:

@@ -10,7 +10,7 @@
 # ============================================================
 
 [project]
-name = "datafun-06-applied" # CUSTOM: Package distribution name (use lowercase and dashes).
+name = "ml-01-intro" # CUSTOM: Package distribution name (use lowercase and dashes).
 readme = "README.md"
 requires-python = ">=3.14"
 version = "0.1.0"
@@ -20,7 +20,7 @@ dependencies = [
     "ipykernel", # notebooks
     "ipython",   # notebooks
     "pandas",    # tabular data manipulation
-    # "scikit-learn",
+    "scikit-learn", # machine learning library
     "seaborn",   # statistical data visualization built on matplotlib
     "matplotlib" # plotting library for static, animated, and interactive visualizations in Python
 ]
@@ -38,7 +38,7 @@ dev = [
 
 docs = [
     # WHY: Only needed for building documentation, not required for running the package.
-    "mkdocstrings[python]", # automatic API documentation from docstrings
+    "mkdocstrings-python", # automatic API documentation from docstrings
     "zensical", # fast and minimal static site generator for documentation
 ]
 
@@ -165,4 +165,4 @@ requires = ["hatchling"]
 
 [tool.hatch.build.targets.wheel]
 # CUSTOM: Must match src/ folders.
-packages = ["src/datafun"]  # REQ.PACKAGES: Discovery rooted at src/.
+packages = ["src/mlstudio"]  # REQ.PACKAGES: Discovery rooted at src/.

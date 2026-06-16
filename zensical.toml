@@ -1,19 +1,17 @@
 # ============================================================
-# zensical.toml (ALL-PY-SRC)
+# zensical.toml (ALL-COURSE-PY-SRC)
 # ============================================================
-# Updated: 2026-06-06
+# Updated: 2026-06-10
 #
 # REQ: Python src/ repositories SHOULD provide documentation configuration.
 # WHY: Centralizes project documentation configuration.
-# OBS: This file is rendered by dc-up from repository identity.
-# CUSTOM: Keep project-specific narrative in docs/, not in this configuration file.
 
 [project]
-site_name = "Docs" # CUSTOM: Tab name of the documentation site.
-site_url = "https://denisecase.github.io/datafun-06-applied/"
-repo_url = "https://github.com/denisecase/datafun-06-applied"
-repo_name = "{{ repo_full_name }}"
-site_description = "Project Documentation" # CUSTOM: Description of the documentation site.
+site_name = "Docs" # CUSTOM: Set the name that appears in the browser tab.
+site_url = "https://denisecase.github.io/ml-01-intro/"
+repo_url = "https://github.com/denisecase/ml-01-intro"
+repo_name = "ml-01-intro"
+site_description = "Project Documentation" # CUSTOM: Set the description.
 docs_dir = "docs" # source directory for documentation markdown files
 site_dir = "site" # output directory for generated site (ignored by Git; not in repo)
 edit_uri = "edit/main/docs/" # "Edit this page" links (GitHub)
@@ -21,7 +19,7 @@ edit_uri = "edit/main/docs/" # "Edit this page" links (GitHub)
 [project.extra]
 # WHY: Social links provide easy access to project repositories and profiles.
 social = [
-    {icon = "fontawesome/brands/github", link = "https://github.com/denisecase/datafun-06-applied" },
+    {icon = "fontawesome/brands/github", link = "https://github.com/denisecase/ml-01-intro" },
 ]
 
 # ------------------------------------------------------------

@@ -1,39 +1,44 @@
-# datafun-06-applied
+# ml-01-intro
 
 [![Workflow Guide](https://img.shields.io/badge/Pro--Guide-pro--analytics--02-green)](https://denisecase.github.io/pro-analytics-02/workflow-b-apply-example-project/)
 [![Python 3.14](https://img.shields.io/badge/python-3.14%2B-blue?logo=python)](./pyproject.toml)
 [![MIT](https://img.shields.io/badge/license-see%20LICENSE-yellow.svg)](./LICENSE)
 
-> Professional Python project: applied data analytics.
+> Professional Python project: characterizing machine learning.
 
-## Project Goal
+## Project Description
 
-In this project, you perform a novel **Exploratory Data Analysis (EDA)**
-using Jupyter notebooks or Python modules (your preference).
-The addition of related data and/or SQL may be included and is optional.
+This project focuses on learning to find good data problems in a dataset,
+and learning when machine learning (ML) might be helpful.
 
-Your goal: choose a new dataset, and explore it:
-run checks, view distributions, identify missing values or outliers.
-Create and present a custom project to explore a different tabular dataset.
+We learn to characterize:
 
-For data suggestions, please see [data/raw/README.md](data/raw/README.md).
+- supervised (when we pick a target to predict)
+- unsupervised (no target, just exploring, e.g. clustering)
 
-## Examples
+In this project, we pick a dataset and a target.
 
-The project includes an additional EDA on a real-world dataset.
-Between this and the Module 4 example,
-you should be able to see what parts are similar
-(the general outline and workflow) and what changes with data.
-The two projects together help create an appreciation
-for the value of **reusable functions**.
+If the target is:
+
+- a discrete category column, we know it is a classification problem
+- a continuous numeric column, we know it is a regression problem.
+
+Some numbers are actually categories, for example a rating of 1, 2, 3.
+May be better characterized as a category / discrete variable.
+
+## Example + Your Notebook
+
+Keep the example notebook as it is.
+Either copy it or use it to build a new notebook that ends in _yourname.
+See [docs/your-files.md] for more.
 
 ## Working Files
 
 You'll work with these areas:
 
-- **data/raw** - raw data for exploration
+- **data/raw** - raw data for exploration (only if you add a dataset)
 - **docs/** - project narrative and documentation
-- **src/** - supporting Python package modules
+- **src/mlstudio/** - the app is an example; run only (no need to modify)
 - **notebooks/** - interactive analysis
 - **pyproject.toml** - update authorship & links
 - **zensical.toml** - update authorship & links
@@ -61,7 +66,7 @@ Working through issues is part of implementing professional projects.
 
 After completing Phase 1. **Start & Run**, you'll have your own GitHub project,
 with the example notebook executed and committed,
-and running the example script will print out:
+and running the example module will print out:
 
 ```shell
 ========================
@@ -83,9 +88,9 @@ open a machine terminal in your `Repos` folder:
 
 ```shell
 # Replace username with YOUR GitHub username.
-git clone https://github.com/username/datafun-06-applied
+git clone https://github.com/username/ml-01-intro
 
-cd datafun-06-applied
+cd ml-01-intro
 code .
 ```
 
@@ -102,16 +107,19 @@ uv lock --upgrade
 uv sync --extra dev --extra docs --upgrade
 
 uvx pre-commit install
+uvx pre-commit autoupdate
 
 git add -A
 uvx pre-commit run --all-files
 # repeat if changes were made
 uvx pre-commit run --all-files
 
-# run the example module and verify the environment (.venv/)
-uv run python -m datafun.app_case
+# run the example module to verify the environment (.venv/)
+uv run python -m mlstudio.app_case
 
-# do chores
+# run common chores
+uv run ruff format .
+uv run ruff check . --fix
 uv run python -m pyright
 uv run python -m pytest
 uv run python -m zensical build
@@ -142,34 +150,23 @@ Press `Ctrl+c` (both keys together) or `Ctrl+Z` then `Enter` on Windows.
 ## Example Output (Can Remove this Section after You Verify)
 
 ```shell
- | INFO | P06 | --- Section 9: Summary and next steps ---
- | INFO | P06 | ========================
- | INFO | P06 | SUMMARY
- | INFO | P06 | ========================
- | INFO | P06 | Dataset: owid-co2-data-subset
- | INFO | P06 | Original rows: 350
- | INFO | P06 | Clean rows:    308
- | INFO | P06 | Groups found in country: ['Brazil', 'Canada', 'China', 'France', 'Germany', 'India', 'Japan', 'United Kingdom', 'United States', 'World']
- | INFO | P06 | ======================
- | INFO | P06 | Review the results.
- | INFO | P06 | Determine the strongest correlations.
- | INFO | P06 | ======================
- | INFO | P06 | Look for interesting patterns in the charts.
- | INFO | P06 | Repeat the process, exploring additional angles.
- | INFO | P06 | After finding interesting insights, conclude your analysis.
- | INFO | P06 | ======================
- | INFO | P06 | Include instructions and specifics in your README.md file.
- | INFO | P06 | Write up your narrative on your docs/index.md file.
- | INFO | P06 | Include your next step suggestions for further analysis or modeling.
- | INFO | P06 | ======================
- | INFO | P06 | ----- in a script, call plt.show() once at the end to display all charts -----
- | INFO | P06 | ----- in a script, close the chart windows (with the close button) to continue  -----
- | INFO | P06 | EDA workflow complete
- | INFO | P06 | IMPORTANT: This script creates chart windows.
- | INFO | P06 | Close any chart windows and terminate this process with CTRL+c as needed.
- | INFO | P06 | ========================
- | INFO | P06 | Executed successfully!
- | INFO | P06 | ========================
+| INFO | ML | Summarize workflow........
+| INFO | ML | ========================
+| INFO | ML | SUMMARY
+| INFO | ML | ========================
+| INFO | ML | Dataset: hours_scores_case
+| INFO | ML | Original rows: 10
+| INFO | ML | Clean rows: 10
+| INFO | ML | Features: ['hours_studied', 'practice_quizzes', 'attendance_pct', 'sleep_hours', 'prior_score']
+| INFO | ML | Target: score
+| INFO | ML | ----- in a script, call plt.show() once at the end to display all charts -----
+| INFO | ML | ----- in a script, CLOSE the chart windows with the close button to CONTINUE -----
+| INFO | ML | Workflow complete
+| INFO | ML | IMPORTANT: This script creates chart windows.
+| INFO | ML | Close chart windows and terminate this process with CTRL+c as needed.
+| INFO | ML | ========================
+| INFO | ML | Executed successfully!
+| INFO | ML | ========================
 ```
 
 ## Findings and Visuals
@@ -189,17 +186,15 @@ In your custom project, follow this example, but
 
 Remove unnecessary instructional comments in your custom files.
 
-Update these figures to present interesting results from your custom project:
+Update figures to present interesting results from your custom project:
 
-![Correlation Heatmap](./docs/images/Figure_1.png)
+![Provide a Useful Caption](./docs/images/Figure_1.png)
 
 ![Provide a Useful Caption](./docs/images/Figure_2.png)
 
-![Provide a Useful Caption](./docs/images/Figure_3.png)
-
 ## Project Documentation
 
-Additional instructions, terms, and project notes:
+Additional project instructions, terms, and notes:
 
 [docs/index.md](docs/index.md)
 

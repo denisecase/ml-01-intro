@@ -11,9 +11,9 @@
 cff-version: "1.2.0"
 type: software
 
-title: "Data Analytics Fundamentals Project 06: Applied Data Analytics Project"
+title: "ml-01-intro"
 version: "0.1.0"
-date-released: "2026-06-07"
+date-released: "2026-06-16"
 
 authors:
   - family-names: Case
@@ -21,45 +21,26 @@ authors:
     orcid: "https://orcid.org/0000-0001-6165-7389"
     affiliation: "Northwest Missouri State University, School of Computer Science and Information Systems, Maryville, MO, USA"
 
-repository-code: "https://github.com/denisecase/datafun-06-applied"
-url: "https://github.com/denisecase/datafun-06-applied"
+repository-code: "https://github.com/denisecase/ml-01-intro"
+url: "https://github.com/denisecase/ml-01-intro"
 license: MIT
 
 abstract: >
-  Applied data analytics project.
-  The project emphasizes working with tabular data,
-  combining code, results, and narrative text,
-  and applying reproducible analytics practices
-  within a version-controlled project workflow.
+  Machine learning project.
+  Learn to characterize machine learning problems.
 
 keywords:
-  # identity
   - data analytics
   - notebooks
-  - exploratory-data-analysis
-  - tabular-data
-  - visualization
-  - iteration
-  - logging
-
-  # audience
-  - education
-  - teaching
-  - learning
-  - students
-  - instructors
+  - machine learning
   - computer-science-education
   - data-analytics-education
-
-  # practices
   - professional-python
   - reproducible-workflows
   - ci-cd
   - github-actions
   - software-quality
   - professional-practice
-
-  # tools and ecosystem
   - python
   - jupyter
   - pandas

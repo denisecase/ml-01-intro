@@ -2,4 +2,13 @@
 
 This page is auto-generated from Python docstrings.
 
-::: datafun
+Early on, it may not be easy to read.
+It becomes more useful as you get more comfortable with
+project structure, modules, functions, and docstrings.
+
+::: mlstudio
+
+::: mlstudio.app_case
+    options:
+      members: true
+      show_if_no_docstring: true
