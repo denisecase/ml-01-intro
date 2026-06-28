@@ -27,7 +27,9 @@ license: MIT
 
 abstract: >
   Machine learning project.
-  Learn to characterize machine learning problems.
+  Learn to characterize machine learning problems,
+  identify supervised and unsupervised tasks,
+  and select a target for prediction.
 
 keywords:
   - data analytics
@@ -44,6 +46,7 @@ keywords:
   - python
   - jupyter
   - pandas
+  - scikit-learn
   - git
   - github
   - open-source
