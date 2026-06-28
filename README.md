@@ -105,6 +105,8 @@ For best results, follow the detailed instructions in
 [pro-analytics-02 guide](https://denisecase.github.io/pro-analytics-02/).
 
 ```shell
+
+# set up the environment (generally once at the beginning of a project)
 uv self update
 uv python pin 3.14
 uv lock --upgrade
@@ -113,6 +115,7 @@ uv sync --extra dev --extra docs --upgrade
 uvx pre-commit install
 uvx pre-commit autoupdate
 
+# git add all files and auto fix them as much as possible while working
 git add -A
 uvx pre-commit run --all-files
 # repeat if changes were made
@@ -121,14 +124,14 @@ uvx pre-commit run --all-files
 # run the example module to verify the environment (.venv/)
 uv run python -m mlstudio.app_case
 
-# run common chores
+# run common chores: format, lint, run checks and tests...
 uv run ruff format .
 uv run ruff check . --fix
 uv run python -m pyright
 uv run python -m pytest
 uv run python -m zensical build
 
-# save progress
+# save progress after every major change (customize the commit message)
 git add -A
 git commit -m "update"
 git push -u origin main
